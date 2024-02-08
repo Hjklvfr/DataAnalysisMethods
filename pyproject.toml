@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "data-analysis-methods"
+version = "0.1.0"
+description = "Labs"
+authors = ["Roman Grigoryev <hjklvfr@list.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+sphinx = "^7.2.6"
+coverage = "^7.4.1"
+flake8 = "^7.0.0"
+python-dotenv = ">=0.5.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
