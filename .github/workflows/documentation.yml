@@ -16,10 +16,13 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
-      - name: Install dependencies
+      - name: Install poetry
         uses: snok/install-poetry@v1
         with:
           virtualenvs-create: false
+      - name: Install dependencies
+        run: |
+          poetry install --with docs
       - name: Sphinx build
         run: |
           sphinx-build docs _build
