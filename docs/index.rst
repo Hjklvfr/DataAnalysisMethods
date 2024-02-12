@@ -13,7 +13,7 @@ Contents:
 
    getting-started
    commands
-   notebooks/*
+   notebooks/foo
 
 
 
