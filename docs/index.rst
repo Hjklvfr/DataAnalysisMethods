@@ -13,7 +13,7 @@ Contents:
 
    getting-started
    commands
-   .. include:: ../notebooks/foo.ipynb
+   notebooks/*
 
 
 
