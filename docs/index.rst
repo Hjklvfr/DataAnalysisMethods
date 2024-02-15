@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   notebooks/foo
+   notebooks/lab1
 
 
 
