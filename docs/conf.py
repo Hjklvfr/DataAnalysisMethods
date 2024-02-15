@@ -255,4 +255,5 @@ texinfo_documents = [
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 # texinfo_show_urls = 'footnote'
 
+jupyter_execute_notebooks = "off"
 nb_execution_mode = 'cache'
