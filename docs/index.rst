@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    notebooks/lab1
+   notebooks/lab2
 
 
 

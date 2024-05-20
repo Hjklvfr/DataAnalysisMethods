@@ -5,16 +5,19 @@ RUN apt install -y curl
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
-ENV NODE_VERSION=20.11.1
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-ENV NVM_DIR=/root/.nvm
-RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    npm
+RUN npm install npm@latest -g && \
+    npm install n -g && \
+    n latest
 RUN node --version
 RUN npm --version
 
 RUN npm install --global yarn
 RUN corepack enable
 RUN yarn set version stable
+
+RUN useradd -ms /bin/bash dev
+USER dev
+WORKDIR /home/dev

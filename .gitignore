@@ -59,6 +59,19 @@ target/
 # DotEnv configuration
 .env
 
+# IPython Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# virtualenv
+venv/
+ENV/
+
 # Database
 *.db
 *.rdb
@@ -72,11 +85,11 @@ target/
 # Spyder
 .spyproject/
 
+# Rope project settings
+.ropeproject/
+
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
-
-# exclude data from source control by default
-/data/
 
 # Mac OS-specific storage files
 .DS_Store
@@ -90,3 +103,72 @@ target/
 
 # Jupyter cache
 .jupyter_cache/
+
+
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# NPM
+# ----
+
+**/node_modules/
+vr_widget/nbextension/index.*
+
+# Coverage data
+# -------------
+**/coverage/
+
+# Packed lab extensions
+vr_widget/labextension
+
+/_build/

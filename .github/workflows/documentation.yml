@@ -24,7 +24,7 @@ jobs:
           poetry install --with docs
       - name: Sphinx build
         run: |
-          cp -r ./notebooks ./docs/notebooks
+          cp -r ./analytics/notebooks ./docs/notebooks
           sphinx-build docs _build
       - name: Setup Pages
         id: pages

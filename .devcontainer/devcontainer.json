@@ -1,7 +1,7 @@
 {
   "name": "Data Analysis Methods",
   "build": {
-    dockerfile: "Dockerfile"
+    "dockerfile": "Dockerfile"
   },
-  "remoteUser": "dev"
+  "remoteUser": "root"
 }
