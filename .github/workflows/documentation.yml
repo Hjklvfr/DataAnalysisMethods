@@ -25,6 +25,7 @@ jobs:
       - name: Sphinx build
         run: |
           cp -r ./analytics/notebooks ./docs/notebooks
+          cp -r ./analytics/images ./docs/images
           sphinx-build docs _build
       - name: Setup Pages
         id: pages
