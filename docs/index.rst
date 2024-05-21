@@ -13,6 +13,7 @@ Contents:
 
    notebooks/lab1
    notebooks/lab2
+   notebooks/lab3
 
 
 
