@@ -3140,6 +3140,20 @@ objc = ["pyobjc-framework-Cocoa"]
 win32 = ["pywin32"]
 
 [[package]]
+name = "sfrancia"
+version = "1.0.8"
+description = "Shapiro-Francia normality test"
+optional = false
+python-versions = "*"
+files = [
+    {file = "sfrancia-1.0.8-py3-none-any.whl", hash = "sha256:2af879c9288e67802c3fed449c1ea85123fe7aa84980c4ba4f5fc387106ff0ed"},
+]
+
+[package.dependencies]
+numpy = "*"
+scipy = "*"
+
+[[package]]
 name = "shapely"
 version = "2.0.4"
 description = "Manipulation and analysis of geometric objects"
@@ -3854,4 +3868,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.11"
-content-hash = "a160fe9c5aa05122b9982d2912539196dab6f5b0671d5012cd03bafdede1d3ac"
+content-hash = "f95abfaea888317b7288512a394ce19aa0bffde02f65e7a8f945c95512898984"

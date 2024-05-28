@@ -25,6 +25,7 @@ ipywidgets = ">=7.6"
 notebook = ">=5.3"
 shapely = "^2.0.4"
 mapply = "^0.1.25"
+sfrancia = "^1.0.8"
 
 [tool.poetry.dev-dependencies]
 
