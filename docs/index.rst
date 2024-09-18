@@ -14,6 +14,7 @@ Contents:
    notebooks/lab1
    notebooks/lab2
    notebooks/lab3
+   notebooks/lab4
 
 
 
