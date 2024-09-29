@@ -16,6 +16,7 @@ Contents:
    notebooks/lab3
    notebooks/lab4
    notebooks/lab5
+   notebooks/lab6
 
 
 
