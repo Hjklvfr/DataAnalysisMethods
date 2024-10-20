@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
    DAM
-   notebooks/web_lab1
+   IWA
 
 
 
