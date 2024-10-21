@@ -8,6 +8,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 api = (VkApi(os.getenv('VK_API_URL'), os.getenv('VK_ACCESS_TOKEN'))
-       .get_members_with_subscriptions(73332691))
+       .get_members(73332691, ['bdate', 'sex', 'country']))
 
 print(api)
