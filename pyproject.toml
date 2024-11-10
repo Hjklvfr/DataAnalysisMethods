@@ -28,6 +28,9 @@ mapply = "^0.1.25"
 sfrancia = "^1.0.8"
 grequests = "^0.7.0"
 tqdm = "^4.66.5"
+pymongo = "^4.10.1"
+asyncio = "^3.4.3"
+aiohttp = {extras = ["speedups"], version = "^3.10.10"}
 
 [tool.poetry.dev-dependencies]
 
