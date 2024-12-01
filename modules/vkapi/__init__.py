@@ -1,11 +1,7 @@
-import json
-import logging
 import asyncio
 import copy
+import json
 import logging
-import os
-from http.client import responses
-from logging.config import fileConfig
 from typing import List, Any
 
 import aiohttp
@@ -48,6 +44,8 @@ class VkApi(object):
         return members
 
     async def get_groups(self, group_ids: List[int], fields: List[str]):
+        if fields is None:
+            fields = []
         endpoint = 'method/groups.getById'
         payload = {
             'group_ids': group_ids,
@@ -62,6 +60,24 @@ class VkApi(object):
             return []
         groups = response.get('response').get('groups')
         return groups
+
+    async def get_users(self, user_ids: List[int], fields=None):
+        if fields is None:
+            fields = []
+        endpoint = 'method/users.get'
+        payload = {
+            'user_ids': user_ids,
+            'fields': ','.join(fields),
+            'access_token': self.access_token,
+            'v': '5.199'
+        }
+
+        response = await self._prepare_and_make_request(endpoint, 'POST', payload)
+        if response.get('error'):
+            logging.warning('Error for get_users. %s', json.dumps(response.get('error')))
+            return []
+        users = response.get('response')
+        return users
 
     async def get_followers(self, user_id: int, fields: List[str]):
         endpoint = 'method/users.getFollowers'
