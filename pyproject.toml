@@ -34,6 +34,8 @@ aiohttp = {extras = ["speedups"], version = "^3.10.10"}
 scrapy = "^2.12.0"
 pymorphy2 = "^0.9.1"
 catboost = "^1.2.7"
+neo4j = "^5.27.0"
+py2neo = "^2021.2.4"
 
 [tool.poetry.dev-dependencies]
 
