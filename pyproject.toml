@@ -36,6 +36,7 @@ pymorphy2 = "^0.9.1"
 catboost = "^1.2.7"
 neo4j = "^5.27.0"
 py2neo = "^2021.2.4"
+redis = "^5.2.1"
 
 [tool.poetry.dev-dependencies]
 
