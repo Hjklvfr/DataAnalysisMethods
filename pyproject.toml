@@ -1,52 +1,48 @@
-[tool.poetry]
+[project]
 name = "data-analysis-methods"
 version = "0.1.0"
-description = "Labs"
-authors = ["Roman Grigoryev <hjklvfr@list.ru>"]
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp[speedups]>=3.12.1",
+    "asyncio>=3.4.3",
+    "catboost>=1.2.7",
+    "click>=8.1.7",
+    "coverage>=7.6.1",
+    "flake8>=7.1.1",
+    "grequests>=0.7.0",
+    "ipywidgets>=8.1.5",
+    "jupyter>=1.1.1",
+    "jupyterlab>=4.2.5",
+    "mapply>=0.1.26",
+    "matplotlib>=3.9.2",
+    "neo4j>=5.27.0",
+    "notebook>=7.2.2",
+    "numpy>=1.26.4",
+    "pandas>=2.2.2",
+    "plotly>=5.24.1",
+    "py2neo>=2021.2.4",
+    "pymongo>=4.10.1",
+    "pymorphy2>=0.9.1",
+    "python-dotenv>=1.0.1",
+    "redis>=5.2.1",
+    "scikit-learn>=1.5.2",
+    "scipy>=1.14.1",
+    "scrapy>=2.12.0",
+    "seaborn>=0.13.2",
+    "sfrancia>=1.0.8",
+    "shapely>=2.0.6",
+    "sphinx>=7.4.7",
+    "statsmodels>=0.14.2",
+    "tqdm>=4.66.5",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.12,<3.13"
-click = "^8.1.7"
-sphinx = "^7.2.6"
-coverage = "^7.4.1"
-flake8 = "^7.0.0"
-python-dotenv = ">=0.5.1"
-jupyter = "^1.0.0"
-pandas = "^2.2.0"
-matplotlib = "^3.8.2"
-seaborn = "^0.13.2"
-numpy = "^1.26.4"
-statsmodels = "^0.14.1"
-scipy = "^1.12.0"
-scikit-learn = "^1.4.2"
-plotly = "^5.22.0"
-jupyterlab = ">=3"
-ipywidgets = ">=7.6"
-notebook = ">=5.3"
-shapely = "^2.0.4"
-mapply = "^0.1.25"
-sfrancia = "^1.0.8"
-grequests = "^0.7.0"
-tqdm = "^4.66.5"
-pymongo = "^4.10.1"
-asyncio = "^3.4.3"
-aiohttp = {extras = ["speedups"], version = "^3.10.10"}
-scrapy = "^2.12.0"
-pymorphy2 = "^0.9.1"
-catboost = "^1.2.7"
-neo4j = "^5.27.0"
-py2neo = "^2021.2.4"
-redis = "^5.2.1"
-
-[tool.poetry.dev-dependencies]
-
-[tool.poetry.group.docs.dependencies]
-myst-nb = "^1.0.0"
-sphinx = "^7.2.6"
-sphinx-book-theme = "^1.1.0"
-myst-parser = "^2.0.0"
-sphinx-design = "^0.5.0"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+docs = [
+    "myst-nb>=1.2.0",
+    "myst-parser>=4.0.1",
+    "sphinx>=7.4.7",
+    "sphinx-book-theme>=1.1.4",
+    "sphinx-design>=0.6.1",
+]
