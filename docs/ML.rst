@@ -5,3 +5,4 @@ Machine Learning
    :maxdepth: 2
 
    notebooks/ml_lab1
+   notebooks/ml_lab2
