@@ -6,3 +6,4 @@ Machine Learning
 
    notebooks/ml_lab1
    notebooks/ml_lab2
+   notebooks/ml_lab3
