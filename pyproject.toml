@@ -36,6 +36,7 @@ dependencies = [
     "sphinx>=7.4.7",
     "statsmodels>=0.14.2",
     "tqdm>=4.66.5",
+    "xgboost-cpu>=3.0.2",
 ]
 
 [dependency-groups]
