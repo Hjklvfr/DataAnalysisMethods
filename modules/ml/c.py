@@ -1,6 +1,5 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.optimizers import Adam, SGD
 
 
 def build_model(input_dim, layers, activation='relu', optimizer='adam'):
@@ -9,12 +8,9 @@ def build_model(input_dim, layers, activation='relu', optimizer='adam'):
     for units in layers[1:]:
         model.add(Dense(units, activation=activation))
         model.add(Dropout(0.3))
-    model.add(Dense(1, activation='sigmoid'))
+    model.add(Dense(1, activation='linear'))  # Выходной слой для регрессии
 
-    if optimizer == 'adam':
-        opt = Adam()
-    elif optimizer == 'sgd':
-        opt = SGD(momentum=0.9)
-
-    model.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer=optimizer,
+                  loss='mean_squared_error',
+                  metrics=['mae'])
     return model
