@@ -3,11 +3,10 @@ name = "data-analysis-methods"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "==3.12"
 dependencies = [
     "aiohttp[speedups]>=3.12.1",
     "asyncio>=3.4.3",
-    "catboost>=1.2.7",
     "click>=8.1.7",
     "coverage>=7.6.1",
     "dotenv>=0.9.9",
@@ -21,6 +20,7 @@ dependencies = [
     "neo4j>=5.27.0",
     "notebook>=7.2.2",
     "numpy>=1.26.4",
+    "openpyxl>=3.1.5",
     "pandas>=2.2.2",
     "plotly>=5.24.1",
     "py2neo>=2021.2.4",
@@ -38,6 +38,7 @@ dependencies = [
     "shapely>=2.0.6",
     "sphinx>=7.4.7",
     "statsmodels>=0.14.2",
+    "tensorflow[and-cuda]>=2.19.0",
     "tqdm>=4.66.5",
     "xgboost-cpu>=3.0.2",
 ]
