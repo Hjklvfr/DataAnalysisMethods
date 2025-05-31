@@ -6,70 +6,31 @@ import pymorphy2
 import requests
 from bs4 import BeautifulSoup
 
+
 ACCES_TOKEN = 'HDBXiZIdeWmlA6w34_KZ4evtpPanKAaXjXIAhX7GnAXqpY52gf79ZxcbR3e9avLE'
 
 
 morph = pymorphy2.MorphAnalyzer()
-class GeniusApi():
-    def __init__(self, artist):
-        self.artist = artist
-
-    def search(self, page_limit):
-        url = "http://api.genius.com/search"
-        headers = {'Authorization': "Bearer " + ACCES_TOKEN}
-        data = {'q': self.song, 'per_page': page_limit}
-        response = requests.get(url, headers=headers, params=data)
-        if response.status_code == 200:
-            data = response.json()
-            # with open('api-data.json', 'w+') as f:
-            #    json.dump(data, f, indent=2, sort_keys=True)
-            # f = open('api-data.json', 'r')
-            # api_data = f.read()
-            # data = json.loads(api_data)
-            try:
-                for hit in data["response"]["hits"]:
-                    if hit["result"]["primary_artist"]["name"] == self.artist:
-                        song_info = hit
-                        break
-                if song_info:
-                    song_api_path = song_info["result"]["api_path"]
-                    return song_api_path
-            except Exception:
-                return None
-        else:
-            print("Request Failed!")
-            # print(response.text)
-            return None
+class GeniusClient:
 
     def song_list(self, artist):
-
-        url = f'http://api.genius.com/artists/{artist}/songs'
+        url = f'https://genius.com/artists/{artist}'
         data = {'access_token': ACCES_TOKEN}
 
         response = requests.get(url, params=data)
         if response.status_code == 200:
-            data = response.json()
-            song_artist_path_list = []
-            try:
-                for song in data["response"]['songs']:
-                    song_artist_path_list.append(song["path"])
+            soup = BeautifulSoup(response.text, 'html.parser')
+            songs_elements = soup.find_all('div', class_='mini_card_grid-song')
+            return list(map(lambda x: x.find('a')['href'], songs_elements))
+        return []
 
-            except Exception:
-                return None
-            return song_artist_path_list
-        else:
-            print(f",{artist}")
-            return None
-
-    def get_lyrics(self, song_path):
-        base_url = "https://genius.com"
-        song_url = base_url + song_path
+    def get_lyrics(self, lyrics_link):
         headers = {
             "User-Agent": "Mozilla/5.0 (compatible; YourBot/0.1; +http://yourdomain.com/bot)"
         }
 
         try:
-            page = requests.get(song_url, headers=headers)
+            page = requests.get(lyrics_link, headers=headers)
             page.raise_for_status()  # Проверка на успешный запрос
         except requests.RequestException as e:
             print(f"Ошибка при запросе страницы: {e}")
@@ -116,3 +77,5 @@ class GeniusApi():
 
         # Соединяем обработанные строки с переносами
         return '\n'.join(processed_lines)
+
+

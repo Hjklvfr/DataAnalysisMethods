@@ -5,4 +5,5 @@ Intelligent Web Analysis
 
    notebooks/web_lab1
    notebooks/web_lab2
+   notebooks/web_lab3
    notebooks/web_lab4

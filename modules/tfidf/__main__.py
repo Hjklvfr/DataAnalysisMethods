@@ -2,9 +2,8 @@ import math
 import string
 from os import mkdir
 
-import pymorphy2
 
-from modules.tfidf import GeniusApi, morph
+from modules.tfidf import GeniusClient, morph
 
 
 def normalize_text(text):
@@ -72,9 +71,9 @@ def tokenize(document):
     return document.lower().split()
 
 if __name__ == "__main__":
-    music_artist = ['2955190']
+    music_artist = ['20222']
     songs=[]
-    g = GeniusApi(  music_artist)
+    g = GeniusClient(music_artist)
     documents=[]
     for artist in music_artist:
         song_list=g.song_list(artist)
